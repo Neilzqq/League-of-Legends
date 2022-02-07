@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .mb-footer,
+        .mb-nav {
+            display: none;
+        }
+
+        .pc-header {
+            position: fixed;
+            top: 0;
+            z-index: 999;
+            left: 0;
+            width: 100%;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding-top: 25px;
+            list-style: none;
+        }
+
+        .navbar .p1left svg {
+            margin-right: 30px;
+        }
+
+        .navbar .p1left a {
+            margin-right: 30px;
+            text-decoration: none;
+        }
+
+        .navbar .p1left a:hover {
+            border-bottom: 3px solid rgb(11, 196, 226);
+            padding-bottom: 15px;
+
+        }
+
+        .navbar .p1right a {
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+        .nav1 {
+            width: 100%;
+            height: 75px;
+            background-color: #000;
+
+        }
+
+        .navbar a {
+            color: #fff;
+            font-size: 12px;
+            font-family: "FF Mark W05", Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .navbtn {
+            width: fit-content;
+            text-decoration: none;
+            padding: 12px 30px;
+            background-color: rgb(11, 196, 226);
+
+
+        }
+
+        .p1right {
+            list-style: none;
+        }
+
+        .transsition {
+            transition: 500ms;
+        }
+
+        /* pc-footer */
+        .pc-footer .foottop {
+            padding-left: 100px;
+        }
+
+        .pc-footer .footul2 ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* section1 */
+        .sec1 {
+            position: relative;
+        }
+
+        .sec1 video {
+            width: 100%;
+        }
+
+        .sec1-article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 200px;
+            left: 250px;
+
+        }
+
+        .sec1-article img {
+            width: 60%;
+
+        }
+
+        .sec1-article .bga {
+            margin-top: 30px;
+        }
+
+        .sec1-article a {
+            font-size: 0.8125rem;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+            margin: 5px;
+            color: rgb(1, 1, 1);
+            background-color: rgb(11, 196, 226);
+            text-decoration: none;
+            padding: 15px 25px;
+            border: 2px solid #ccc;
+            margin-top: 40px;
+        }
+
+        /* section2 */
+        .section2 {
+            margin-top: 30px;
+            padding: 0 20px;
+            padding-top: 20px;
+            margin-bottom: 100px;
+        }
+
+        .sec2 {
+            display: flex;
+        }
+
+        .sec2card {
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .s2left {
+            writing-mode: vertical-lr;
+            font-size: 0.3325rem;
+            font-weight: bold;
+            letter-spacing: 0.25em;
+            color: rgb(28, 29, 42);
+        }
+
+        .s2card {
+            padding-left: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .s2card .s2cardr {
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 20px;
+        }
+
+        .s2card .s2cardr h6 {
+            color: rgb(188, 188, 188);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+
+        }
+
+        .s2card .s2cardr span {
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: bold;
+            letter-spacing: 0.03em;
+            color: rgb(26, 29, 33);
+        }
+
+        .s2card .s2cardr p {
+            overflow: hidden;
+            margin-top: 8px;
+            color: rgb(26, 29, 33);
+            font-size: 0.5555rem;
+            line-height: 1.08333;
+            letter-spacing: 0.05em;
+            height: 26px;
+        }
+
+        /* section3 */
+        .sec3 {
+            position: relative;
+            padding: 0 40px;
+        }
+
+
+
+        .sec3 .sec3-bg {
+            width: 100%;
+            overflow: hidden;
+
+        }
+
+        .sec3 img {
+            width: 100%;
+            object-fit: cover;
+
+        }
+
+        .s3d {
+            transform: scale3d(1.05, 1.05, 1);
+            transition: transform 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+        }
+
+        .s3dd {
+            transition: 500ms;
+        }
+
+        .s3card {
+            position: absolute;
+            bottom: 0;
+            background-color: rgb(12, 47, 63);
+        }
+
+        .s3card h3,
+        .s3card p {
+            color: #fff;
+            letter-spacing: 0.05em;
+            line-height: 1.16667;
+            font-family: Spiegel, "Arial Narrow", Arial, sans-serif;
+            text-align: center;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        /* section4 */
+        .sec4top {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 100px;
+        }
+
+        .sec4top h6 {
+            font-size: 1.5rem;
+            line-height: 1;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            font-style: italic;
+            font-family: Spiegel, "Arial Narrow", Arial, sans-serif;
+        }
+
+        .sec4top h1 {
+            font-size: calc(61.82px + 3.03vw);
+            line-height: 0.85;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            font-family: "Beaufort for LOL", serif;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+
+        .sec4top p {
+            text-align: center;
+            margin: 12px auto 0px;
+            font-size: 0.875rem;
+            letter-spacing: 0.08em;
+            line-height: 1.6;
+            font-family: Spiegel, "Arial Narrow", Arial, sans-serif;
+        }
+
+        .sec4top .as .a1 {
+            text-decoration: none;
+            font-size: 0.625rem;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            text-align: center;
+            color: #fff;
+            background: #58a;
+        }
+
+        .sec4top .as .a2 {
+            text-decoration: none;
+            font-size: 0.625rem;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            text-align: center;
+            color: #fff;
+            background: rgb(11, 196, 226);
+        }
+
+        .sec4bot {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+            align-items: center;
+
+        }
+
+        .sec4botl {
+            display: flex;
+            padding-bottom: 200px;
+        }
+
+        .sec4li1,
+        .sec4li2,
+        .sec4li3,
+        .sec4li4,
+        .sec4li5,
+        .sec4li6 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 40px;
+        }
+
+        .sec4li1 p,
+        .sec4li2 p,
+        .sec4li3 p,
+        .sec4li4 p,
+        .sec4li5 p,
+        .sec4li6 p {
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: 0.1em;
+            color: rgb(186, 194, 204);
+            font-family: inherit;
+            margin-top: 15px;
+        }
+
+        .sec4li1 svg path,
+        .sec4li2 svg path,
+        .sec4li3 svg path,
+        .sec4li4 svg path,
+        .sec4li5 svg path,
+        .sec4li6 svg path {
+            fill: rgb(186, 194, 204);
+        }
+
+        .s4svg {
+            width: 30px;
+        }
+
+        .s4circle {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: currentcolor;
+            margin-top: 10px;
+        }
+
+        .sec4botlimg {
+            padding-top: 50px;
+            padding-left: 50px;
+        }
+
+        .sec4rimg1,
+        .sec4rimg2,
+        .sec4rimg3,
+        .sec4rimg4,
+        .sec4rimg5,
+        .sec4rimg6 {
+            width: 30%;
+            transform: translateY(-50px);
+        }
+
+        .sec4rimg1 img,
+        .sec4rimg2 img,
+        .sec4rimg3 img,
+        .sec4rimg4 img,
+        .sec4rimg5 img,
+        .sec4rimg6 img {
+            width: 100%;
+
+
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* section5 */
+        .section5 {
+            /* position: relative; */
+            background-image: url(https://www.leagueoflegends.com/static/championstyle_01-dc617921291c69586acbebec745b4191.png);
+            width: 100%;
+            height: 1000px;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            /* background: linear-gradient(0deg, rgb(3, 6, 8), rgb(184, 242, 255), transparent); */
+            /* transform: scale3d(1.2, 1, 1); */
+        }
+
+        .section5::before {
+            content: "";
+            background: linear-gradient(rgb(255, 255, 255) 0%, rgb(184, 242, 255) 40%);
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            height: 120%;
+            z-index: -1;
+        }
+
+        .section5::after {
+            content: "";
+            background: linear-gradient(transparent 0%, rgb(3, 6, 8) 90%);
+            width: 100%;
+            height: 25%;
+            position: absolute;
+            left: 0px;
+            z-index: -1;
+            transform: translateY(-150px);
+        }
+
+        .section5 .sec5bg {
+            background-image: url(https://www.leagueoflegends.com/static/championstyle_02-95fa98258784f905be83831947a1f07c.png);
+            width: 100%;
+            height: 1000px;
+        }
+
+        .section5 .sec5-article {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section5 .sec5mid {
+            width: 50%;
+            position: relative;
+        }
+
+        .section5 .sec5mid .img1,
+        .section5 .sec5mid .img2,
+        .section5 .sec5mid .img3 {
+            width: 100%;
+            position: absolute;
+            top: -150px;
+            left: 200px;
+            opacity: 0;
+            animation: round 15s linear infinite;
+        }
+
+        .section5 .sec5mid .img1:nth-child(1) {
+            animation-delay: 0s;
+
+        }
+
+        .section5 .sec5mid .img2:nth-child(2) {
+            animation-delay: 5s;
+        }
+
+        .section5 .sec5mid .img3:nth-child(3) {
+            animation-delay: 10s;
+        }
+
+        .section5 .sec5mid img {
+            width: 100%;
+        }
+
+        .sec5r {
+            flex-direction: column;
+            text-align: center;
+            padding-top: 200px;
+
+        }
+
+        .sec5r h6 {
+            font-style: italic;
+            font-size: 1.5rem;
+            line-height: 1;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-family: Spiegel, "Arial Narrow", Arial, sans-serif;
+        }
+
+        .sec5r h1 {
+            font-style: italic;
+            font-size: calc(61.82px + 3.03vw);
+            font-family: "Beaufort for LOL", serif;
+            font-weight: 800;
+            line-height: 0.85;
+            letter-spacing: 0.03em;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .sec5r p {
+            text-align: center;
+            font-size: 0.575rem;
+            letter-spacing: 0.08em;
+            line-height: 1.6;
+            color: rgb(255, 255, 255);
+        }
+
+        .sec5r a {
+            width: fit-content;
+            text-decoration: none;
+            font-size: 0.625rem;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            text-align: center;
+            color: #fff;
+            background: rgb(11, 196, 226);
+        }
+
+        /* section6 */
+        .section6::before {
+            content: "";
+            background: linear-gradient(to top, transparent, rgb(3, 6, 8) 80%);
+            width: 100%;
+            height: 60%;
+            z-index: 2;
+            position: absolute;
+            left: 0;
+
+        }
+
+        .section6::after {
+            content: "";
+            background: linear-gradient(transparent, rgb(3, 6, 8) 80%);
+            width: 100%;
+            height: 45%;
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            transform: translateY(-250px);
+
+        }
+
+        .sec6 {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sec6left {
+            text-align: center;
+        }
+
+        .sec6left h5 {
+            font-style: italic;
+            font-size: 1.5rem;
+            line-height: 1;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-family: Spiegel, "Arial Narrow", Arial, sans-serif;
+        }
+
+        .sec6left h1 {
+            font-style: italic;
+            font-size: calc(61.82px + 3.03vw);
+            line-height: 0.85;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            font-family: "Beaufort for LOL", serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .sec6left a {
+            width: fit-content;
+            text-decoration: none;
+            font-size: 0.625rem;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            text-align: center;
+            color: #fff;
+            background: rgb(11, 196, 226);
+        }
+
+        .sec6mid p {
+            margin-top: 30px;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-family: Spiegel, "Arial Narrow", Arial, sans-serif;
+        }
+
+        .sec6 .sec6mid {
+            width: 30%;
+        }
+
+        .sec6 .sec6mid .v1,
+        .sec6 .sec6mid .v2,
+        .sec6 .sec6mid .v3 {
+            width: 100%;
+        }
+
+        .sec6 video {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .section6-article {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: absolute;
+            top: 300px;
+            left: 100px;
+        }
+
+        .sec6 .sec6right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .sec6 .sec6right .r1,
+        .sec6 .sec6right .r2,
+        .sec6 .sec6right .r3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .sec6 .sec6right .r1 img {
+            width: 33%;
+        }
+
+        .sec6 .sec6right .r2 img {
+            width: 39%;
+        }
+
+        .sec6 .sec6right .r3 img {
+            width: 30%;
+        }
+
+        .sec6 .sec6right p {
+            color: #fff;
+            margin-right: 0.625rem;
+            text-align: right;
+            font-size: 0.135rem;
+            line-height: 1.2;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+
+        /* section7 */
+        .section7::before {
+            content: "";
+            background: linear-gradient(to top, transparent, rgb(3, 6, 8) 80%);
+            width: 100%;
+            height: 20%;
+            z-index: 2;
+            position: absolute;
+            left: 0;
+
+        }
+
+        .sec7 {
+            background-color: rgb(3, 6, 8);
+            display: flex;
+            position: relative;
+        }
+
+        .sec7 .sec7right {
+            position: absolute;
+            right: 130px;
+            top: 150px;
+            text-align: center;
+        }
+
+        .sec7 .sec7right h6 {
+            font-size: 1.5rem;
+            line-height: 1;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            font-style: italic;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .sec7 .sec7right h1 {
+            font-family: "Beaufort for LOL", serif;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            line-height: 0.85;
+            font-size: calc(61.82px + 3.03vw);
+            font-style: italic;
+            color: rgb(255, 255, 255);
+            text-align: center;
+
+        }
+
+        .sec7 .sec7right p {
+            text-align: center;
+            font-size: 0.575rem;
+            letter-spacing: 0.08em;
+            line-height: 1.6;
+            color: rgb(255, 255, 255);
+        }
+
+        .sec7 .sec7right .as .a1 {
+            background-color: rgb(224, 182, 103);
+            font-family: Spiegel, "Arial Narrow", Arial, sans-serif;
+            color: #000;
+            font-size: 0.8125rem;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .sec7 .sec7right .as .a2 {
+            background-color: rgb(11, 198, 227);
+            font-family: Spiegel, "Arial Narrow", Arial, sans-serif;
+            color: #000;
+            font-size: 0.8125rem;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* section8 */
+        .section8 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            padding-bottom: 100px;
+        }
+
+        .section8 .sec8top {
+            text-align: center;
+        }
+
+        .section8 .sec8top h6 {
+            font-size: 1.5rem;
+            line-height: 1;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            font-style: italic;
+            font-family: Spiegel, "Arial Narrow", Arial, sans-serif;
+        }
+
+        .section8 .sec8top h1 {
+            font-size: calc(61.82px + 3.03vw);
+            line-height: 0.85;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            font-family: "Beaufort for LOL", serif;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+
+        .section8 #cards {
+            display: flex;
+            justify-content: center;
+            transform: translateY(200px);
+            opacity: 0;
+            transition: 1s;
+            margin-top: 50px;
+        }
+
+        .section8 #cards .cardd {
+            margin-right: 20px;
+            background-color: rgb(246, 246, 246);
+        }
+
+        .section8 #cards span {
+            text-align: center;
+            color: rgb(26, 29, 33);
+            font-family: "Beaufort for LOL", serif;
+            font-size: 1.875rem;
+            font-weight: 800;
+            font-style: italic;
+            padding: 10%;
+            margin-top: -20px;
+        }
+
+        #cards.show {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        .section8 .cardd {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+        }
+
+        .section8 img {
+            width: 100%;
+        }
+
+        /* section9 */
+        .sec9 {
+            margin-bottom: -6px;
+        }
+
+        .sec9 video {
+            width: 100%;
+        }
+
+        .foottop {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(6, 28, 37);
+        }
+
+        .foottop h6 {
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.08em;
+            font-family: "Beaufort for LOL", serif;
+            color: rgb(209, 218, 222);
+        }
+
+        .foottop p {
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            color: rgb(209, 218, 222);
+            margin-top: 15px;
+        }
+
+        .foot1 {
+            background-color: #111;
+        }
+
+        .foot1 ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .foot1 .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .ftul1 a {
+            color: #7e7e7e;
+            text-decoration: none;
+            padding-right: 20px;
+            font-size: 12px;
+        }
+
+        .ftul1 a:hover {
+            color: #fff;
+            transition: all .3s linear;
+        }
+
+
+        .foot1svg2 {
+            display: flex;
+            flex-direction: row;
+
+
+        }
+
+        .foot1svg2 svg:hover {
+            fill: #fff;
+        }
+
+        .foot1svg2 svg {
+            padding-right: 20px;
+            height: 20px;
+        }
+
+        .footp1 p {
+            font-size: 12px;
+            font-weight: 500;
+            color: #7e7e7e;
+            text-align: center;
+            font-family: "FF Mark W05", Arial, sans-serif;
+        }
+
+        .footul2 {
+            margin-right: 30px;
+        }
+
+        .footul2 ul li a {
+            text-decoration: underline;
+            color: #7e7e7e;
+            padding: 0 5px;
+            font-size: 8px;
+        }
+
+        .foot15 {
+            display: flex;
+        }
+
+        .foot15 p {
+            color: #efefef;
+            margin-left: 6px;
+            line-height: 19px;
+            font-size: 15px;
+            font-family: "FF Mark W05", Arial, sans-serif;
+            text-align: left;
+
+        }
+
+        .foottopp .foottop {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .foottop .footr {
+            display: flex;
+            justify-content: center;
+        }
+
+        @keyframes round {
+            4% {
+                opacity: 1;
+
+            }
+
+            20% {
+                opacity: 1;
+
+            }
+
+            24% {
+                opacity: 0;
+
+            }
+        }
+
+        @media (max-width:1150px) {
+            .pc-header {
+                display: none;
+            }
+
+            /* mb-header */
+            .mb-nav {
+                display: block;
+                background-color: #000;
+                padding: 20px 10px;
+            }
+
+            .rwdnav {
+                display: flex;
+
+            }
+
+            .right {
+                margin-left: auto;
+            }
+
+            .rwdnav .left {
+                margin-right: 50px;
+            }
+        }
+
+        @media (max-width:375px) {
+            .pc-header {
+                display: none;
+            }
+
+            .pc-footer {
+                display: none;
+            }
+
+            /* mb-header */
+            .mb-nav {
+                display: block;
+                background-color: #000;
+                padding: 20px 10px;
+            }
+
+            .rwdnav {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .rwdnav .left {
+                margin-right: 70px;
+            }
+
+            /* mb-footer */
+            .mb-footer {
+                display: block;
+            }
+
+            .mb-footer .foottop {
+                flex-direction: column;
+            }
+
+            .mb-footer .footr {
+                padding-left: 50px;
+            }
+
+            .mb-footer .footr .img2 {
+                width: 45%;
+            }
+
+            .mb-footer .footul2 ul {
+                display: block;
+                text-align: center;
+            }
+
+            .mb-footer .footul2 ul li {
+                margin-bottom: 20px;
+            }
+
+            .mb-footer .footul2 ul li a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 18px;
+
+            }
+
+            /* section1 */
+            .section1 {
+                display: block;
+                overflow: hidden;
+            }
+
+            .section1 video {
+                width: 250%;
+                transform: translateX(-250px);
+            }
+
+            .sec1-article {
+                top: 100px;
+                left: 0;
+            }
+
+            .sec1-article img {
+                width: 80%;
+            }
+
+            /* section2 */
+            .section2 {
+                display: block;
+                margin: 0;
+            }
+
+            .sec2 {
+                align-items: center;
+            }
+
+            .section2 .sec2card {
+                margin-left: 10px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            .section2 .s2card {
+                padding-left: 0;
+                margin-bottom: 20px;
+            }
+
+            /* section3 */
+            .section3 {
+                display: block;
+                padding: 0 20px;
+            }
+
+            .sec3 {
+                margin-left: 0;
+                padding: 0;
+            }
+
+            .sec3 .sec3-bg {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .sec3-bg img {
+                width: 300%;
+                transform: translateX(-340px);
+            }
+
+            .s3card {
+                width: fit-content;
+                padding: 5px 10px;
+                bottom: -15px;
+                left: 55px;
+            }
+
+            .s3card h3 {
+                font-size: 1.25rem;
+                font-weight: 700;
+            }
+
+            .s3card p {
+                display: none;
+            }
+
+            /* section4 */
+            .section4 {
+                display: block;
+                padding: 0 10px;
+            }
+
+            .sec4top h1 {
+                font-size: 50px;
+                font-weight: 900;
+            }
+
+            .sec4top p {
+                font-size: 16px;
+            }
+
+            .sec4bot {
+                display: block;
+            }
+
+            .sec4botl {
+                padding-bottom: 50px;
+            }
+
+            .sec4li1,
+            .sec4li2,
+            .sec4li3,
+            .sec4li4,
+            .sec4li5,
+            .sec4li6 {
+                margin-right: 0;
+            }
+
+            .sec4botlimg {
+                display: none;
+            }
+
+            .sec4rimg1,
+            .sec4rimg2,
+            .sec4rimg3,
+            .sec4rimg4,
+            .sec4rimg5,
+            .sec4rimg6 {
+                width: 100%;
+                transform: translateY(0);
+                margin-left: 10px;
+
+            }
+
+            /* section5 */
+            .section5 {
+                display: block;
+                transform: scale(1);
+                padding: 0 20px;
+                height: 1000px;
+            }
+
+            .section5::before {
+                content: none;
+            }
+
+            .section5::after {
+                transform: translateY(-250px);
+            }
+
+            .section5 .sec5-article {
+                display: block;
+            }
+
+            .section5 .sec5mid {
+                width: 100%;
+            }
+
+            .section5 .sec5mid .img1,
+            .section5 .sec5mid .img2,
+            .section5 .sec5mid .img3 {
+                width: 100%;
+                top: 400px;
+                left: 10px;
+            }
+
+            .sec5r h6,
+            .sec5r h1 {
+                color: #000;
+            }
+
+            .sec5r p {
+                color: #000;
+                font-size: 14px;
+            }
+
+            /* section6 */
+            .section6 {
+                display: block;
+            }
+
+            .section6::before {
+                height: 10%;
+            }
+
+            .section6::after {
+                transform: translateY(-340px);
+            }
+
+            .section6-article {
+                display: block;
+                left: 0;
+                top: 100px;
+                padding: 0 30px;
+            }
+
+            .sec6left {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .sec6 .sec6mid {
+                width: 100%;
+                margin-top: 50px;
+            }
+
+            .sec6 .sec6right {
+                flex-direction: row;
+                margin-top: 60px;
+            }
+
+            .sec6 .sec6right .r1,
+            .sec6 .sec6right .r2,
+            .sec6 .sec6right .r3 {
+                flex-direction: column;
+            }
+
+            .sec6 .sec6right .r1 p,
+            .sec6 .sec6right .r2 p,
+            .sec6 .sec6right .r3 p {
+                text-align: center;
+            }
+
+            .sec6 .sec6right .r1 img,
+            .sec6 .sec6right .r2 img,
+            .sec6 .sec6right .r3 img {
+                width: 60%;
+            }
+
+            /* section7 */
+            .section7 {
+                display: block;
+            }
+
+            .section7::before {
+                height: 0;
+            }
+
+            .sec7 {
+                display: block;
+                padding-bottom: 50px;
+            }
+
+            .sec7 img {
+                width: 100%;
+            }
+
+            .sec7 .sec7right {
+                position: static;
+                padding: 0 20px;
+            }
+
+            .sec7 .sec7right h6 {
+                font-size: 18px;
+            }
+
+            .sec7 .sec7right h1 {
+                font-size: 40px;
+            }
+
+            .sec7 .sec7right p {
+                font-size: 14px;
+            }
+
+            .as {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+            }
+
+            .as a {
+                width: fit-content;
+                margin-bottom: 30px;
+
+            }
+
+            /* section8 */
+            .section8 {
+                display: block;
+                padding-bottom: 0;
+            }
+
+            .section8 .sec8top h1 {
+                font-size: 40px;
+            }
+
+            .section8 #cards {
+                display: block;
+                padding: 0 20px;
+                padding-bottom: 100px;
+            }
+
+            .section8 #cards .cardd {
+                width: 100%;
+                margin-right: 0;
+                margin-top: 50px;
+            }
+
+            /* section9 */
+            .sec9 {
+                display: block;
+                overflow: hidden;
+                margin-bottom: -6px;
+            }
+
+            .sec9 video {
+                width: 300%;
+                transform: translateX(-400px);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!--  pcheader-->
+    <header class="pc-header">
+        <nav class="nav1">
+            <ul class="navbar">
+                <li class="p1left">
+                    <svg width="75" height="24" class="_32ANSIZormifc9Vc6VVwrx" viewBox="0 0 75.89 24" fill="#fff">
+                        <title>mainLogoRiotFist</title>
+                        <g class="cls-2">
+                            <path class="cls-3"
+                                d="M69.31 20.67l4.22.71.26 2.63h-6.26l.11-1 4.48-.18v-.48l-4.3-.74.26-2.64h5.21l.1 1.05-4 .15zm-36.23 1.27l.06-1H36l.17 3.06h-6.52l.51-5.08h5.71l.07 1.05-4.43.1-.14 2.79 3.22.09v-1zm27.63.04v.87l4.1.1v1H59l.17-5.08h5.53v1.05l-4.1.09v.89h3.11v1z">
+                            </path>
+                            <path class="cls-4"
+                                d="M43.87 24h1.75l-1.39-5.08h-4.11L38.74 24h1.75l.27-1.28h2.85zm-2.9-2.25l.35-1.66 1.69-.08.36 1.67z">
+                            </path>
+                            <path class="cls-3"
+                                d="M56.28 24l-.52-5.08h-1.47l-2.12 2.42-2.11-2.42h-1.48L48.07 24h1.73l.17-3.29 2.2 2.24 2.21-2.24.17 3.29z">
+                            </path>
+                            <path class="cls-4"
+                                d="M43.2 16.03h-4.55l-1.21-5.54-2.93 1.59-.1 3.95h-4.07l1.26-12.4-2.6.09.38-3.41h11.61l1.61 7.38-2.36 1.28zM38.09 3.42l-3.34.11-.13 4.82 3.85-1.8z">
+                            </path>
+                            <path class="cls-3"
+                                d="M48.87.31h-3.46l-.32 15.72h4.19zm26.64 0l.36 3.44-4.24-.14 1.24 12.42h-4.19l-.35-12.54-3.41-.11-.09-3.07z">
+                            </path>
+                            <path class="cls-4" d="M52.18.32h10.8l.77 15.71h-12zm3.63 12.43l3.82-.12v-9l-4-.12z"></path>
+                            <path class="cls-3"
+                                d="M0 6.97l14.86-7 8.69 2.1L22 17.44h-4.41l-.82-11.2-.47.15-.78 11.05h-3.34l-1.59-9.29-.47.14.12 9.15H7.09L5.27 9.78l-.47.15.53 7.51h-3zm11.22 11.98l1.09 2.81 9 2.23.47-4.49z">
+                            </path>
+                        </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="league" width="30" height="32" viewBox="0 0 30 32"
+                        fill="none">
+                        <g>
+                            <path
+                                d="M1.80644 9.75049C0.655032 11.8373 0 14.2271 0 16.7683C0 19.3095 0.655032 21.7015 1.80644 23.7883V9.75049Z"
+                                fill="#C28F2C"></path>
+                            <path
+                                d="M15 2.02222C13.7829 2.02222 12.602 2.16921 11.4688 2.43647V4.75718C12.5907 4.44093 13.7738 4.26721 15 4.26721C22.0218 4.26721 27.7153 9.84627 27.7153 16.7305C27.7153 19.8307 26.5571 22.6659 24.6464 24.8463L24.2838 26.118L23.4814 28.9331C27.4184 26.2761 30.0023 21.8195 30.0023 16.7705C30 8.62355 23.2843 2.02222 15 2.02222Z"
+                                fill="#C28F2C"></path>
+                            <path
+                                d="M11.4688 24.4209H22.9737H23.2253C25.1723 22.4209 26.3713 19.7126 26.3713 16.7305C26.3713 10.5746 21.2806 5.58569 15 5.58569C13.767 5.58569 12.5816 5.78168 11.4688 6.1358V24.4209Z"
+                                fill="#C28F2C"></path>
+                            <path
+                                d="M10.1088 0H1.55029L3.16634 3.29844V28.7038L1.55029 32H21.1922L22.9737 25.7572H10.1088V0Z"
+                                fill="#C28F2C"></path>
+                        </g>
+                    </svg>
+                    <a href="">GAME</a>
+                    <a href="">CHAMPIONS</a>
+                    <a href="">NEWS</a>
+                    <a href="">PATCH NOTES</a>
+                    <a href="">DISCOVER</a>
+                    <a href="">ESPORTS</a>
+                    <a href="">UNIVERSE</a>
+                    <a href="">SHOP</a>
+                    <a href="">SUPPORT</a>
+                </li>
+
+                <li class="p1right">
+                    <a href=""><svg width="14" height="14" class="" viewBox="0 0 16 16">
+                            <title>globeIcon</title>
+                            <path
+                                d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8zm5.544 4.8h-2.36c-.256-1-.624-1.96-1.104-2.848A6.424 6.424 0 0113.536 4.8zM8 1.632A11.27 11.27 0 019.528 4.8H6.472A11.27 11.27 0 018 1.632zM1.808 9.6A6.594 6.594 0 011.6 8c0-.552.08-1.088.208-1.6h2.704A13.212 13.212 0 004.4 8c0 .544.048 1.072.112 1.6H1.808zm.656 1.6h2.36c.256 1 .624 1.96 1.104 2.848A6.39 6.39 0 012.464 11.2zm2.36-6.4h-2.36a6.39 6.39 0 013.464-2.848A12.52 12.52 0 004.824 4.8zM8 14.368A11.27 11.27 0 016.472 11.2h3.056A11.27 11.27 0 018 14.368zM9.872 9.6H6.128A11.77 11.77 0 016 8c0-.544.056-1.08.128-1.6h3.744C9.944 6.92 10 7.456 10 8s-.056 1.072-.128 1.6zm.2 4.448a12.52 12.52 0 001.104-2.848h2.36a6.424 6.424 0 01-3.464 2.848zM11.488 9.6c.064-.528.112-1.056.112-1.6s-.048-1.072-.112-1.6h2.704c.128.512.208 1.048.208 1.6s-.08 1.088-.208 1.6h-2.704z"
+                                fill="#E8E8E8"></path>
+                        </svg></a>
+                    <a href="">SIGN IN</a>
+                    <a href="" class="navbtn">PLAY NOW</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- rwd header -->
+    <nav class="mb-nav">
+        <div class="rwdnav">
+            <div class="left">
+                <svg width="75" height="24" class="_32ANSIZormifc9Vc6VVwrx" viewBox="0 0 75.89 24" fill="#fff">
+                    <title>mainLogoRiotFist</title>
+                    <g class="cls-2">
+                        <path class="cls-3"
+                            d="M69.31 20.67l4.22.71.26 2.63h-6.26l.11-1 4.48-.18v-.48l-4.3-.74.26-2.64h5.21l.1 1.05-4 .15zm-36.23 1.27l.06-1H36l.17 3.06h-6.52l.51-5.08h5.71l.07 1.05-4.43.1-.14 2.79 3.22.09v-1zm27.63.04v.87l4.1.1v1H59l.17-5.08h5.53v1.05l-4.1.09v.89h3.11v1z">
+                        </path>
+                        <path class="cls-4"
+                            d="M43.87 24h1.75l-1.39-5.08h-4.11L38.74 24h1.75l.27-1.28h2.85zm-2.9-2.25l.35-1.66 1.69-.08.36 1.67z">
+                        </path>
+                        <path class="cls-3"
+                            d="M56.28 24l-.52-5.08h-1.47l-2.12 2.42-2.11-2.42h-1.48L48.07 24h1.73l.17-3.29 2.2 2.24 2.21-2.24.17 3.29z">
+                        </path>
+                        <path class="cls-4"
+                            d="M43.2 16.03h-4.55l-1.21-5.54-2.93 1.59-.1 3.95h-4.07l1.26-12.4-2.6.09.38-3.41h11.61l1.61 7.38-2.36 1.28zM38.09 3.42l-3.34.11-.13 4.82 3.85-1.8z">
+                        </path>
+                        <path class="cls-3"
+                            d="M48.87.31h-3.46l-.32 15.72h4.19zm26.64 0l.36 3.44-4.24-.14 1.24 12.42h-4.19l-.35-12.54-3.41-.11-.09-3.07z">
+                        </path>
+                        <path class="cls-4" d="M52.18.32h10.8l.77 15.71h-12zm3.63 12.43l3.82-.12v-9l-4-.12z"></path>
+                        <path class="cls-3"
+                            d="M0 6.97l14.86-7 8.69 2.1L22 17.44h-4.41l-.82-11.2-.47.15-.78 11.05h-3.34l-1.59-9.29-.47.14.12 9.15H7.09L5.27 9.78l-.47.15.53 7.51h-3zm11.22 11.98l1.09 2.81 9 2.23.47-4.49z">
+                        </path>
+                    </g>
+                </svg>
+            </div>
+            <div class="mid">
+                <svg xmlns="http://www.w3.org/2000/svg" class="league" width="85" height="32" viewBox="0 0 85 32"
+                    fill="none">
+                    <g clip-path="url(#clip0)">
+                        <path
+                            d="M59.7261 17.2695V31.749H56.5229L49.6035 22.34V31.749H46.5347V18.6228L45.8335 17.2695H49.801L56.6573 26.8087V17.2695H59.7261Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M27.8345 31.9991C28.8909 32.0048 29.8667 31.8267 30.7619 31.467C31.6582 31.1072 32.4307 30.6082 33.0828 29.9721C33.7337 29.336 34.2444 28.5811 34.6148 27.7098C34.8813 27.0828 35.0531 26.4205 35.1314 25.7238C35.1618 25.4532 35.2143 24.3614 35.1582 23.7025H27.8649L26.5665 26.3131H31.7704C31.5694 27.1376 31.1148 27.8171 30.409 28.3287C29.7019 28.8415 28.8559 29.095 27.8707 29.0904C27.2373 29.087 26.646 28.9637 26.0979 28.7204C25.5498 28.4772 25.073 28.1483 24.6675 27.7338C24.2608 27.3192 23.9441 26.8327 23.7139 26.2743C23.4848 25.7158 23.3715 25.1197 23.375 24.487C23.3785 23.8544 23.4977 23.2594 23.7326 22.7032C23.9675 22.1471 24.29 21.664 24.7014 21.2529C25.1116 20.8418 25.5884 20.522 26.1318 20.2902C26.6752 20.0595 27.263 19.9453 27.8976 19.9476C28.7565 19.9522 29.515 20.1417 30.1752 20.5163C30.8355 20.8909 31.3462 21.4299 31.7085 22.1334L34.588 20.7858C33.9885 19.6141 33.1026 18.6948 31.9305 18.0279C30.7584 17.3621 29.4261 17.0252 27.9338 17.0172C26.8774 17.0115 25.877 17.2034 24.9328 17.5905C23.9874 17.9776 23.1646 18.5098 22.4646 19.1882C21.7646 19.8654 21.2072 20.6579 20.7947 21.5635C20.381 22.4691 20.173 23.4387 20.1671 24.4699C20.1613 25.5011 20.3576 26.473 20.7538 27.3832C21.1511 28.2933 21.6922 29.0904 22.3782 29.7745C23.0641 30.4586 23.8752 30.9999 24.8089 31.3962C25.7415 31.7924 26.7512 31.9934 27.8345 31.9991Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M3.90672 17.2686H0L0.737403 18.7657V30.2542L0 31.7503H8.9657L9.77906 28.917H3.90672V17.2686Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M10.8613 31.7503H19.6003V28.9181H14.0423V25.7411H18.3394L19.1177 23.0185H14.0423V20.0893H19.6003V17.2686H10.8613V31.7503Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M36.2681 31.7503H45.007V28.9181H39.4491V25.7411H43.7473L44.5244 23.0185H39.4491V20.0893H45.007V17.2686H36.2681V31.7503Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M41.8662 14.9822C42.9227 14.9879 43.8985 14.8098 44.7936 14.45C45.69 14.0903 46.4624 13.5912 47.1145 12.9551C47.7654 12.3191 48.2761 11.5642 48.6466 10.6928C48.913 10.0659 49.0848 9.40352 49.1631 8.7069C49.1935 8.43625 49.2461 7.3445 49.19 6.68556H41.8966L40.5983 9.29503H45.8022C45.6011 10.1196 45.1466 10.799 44.4407 11.3107C43.7337 11.8234 42.8876 12.0769 41.9024 12.0724C41.269 12.069 40.6777 11.9456 40.1296 11.7024C39.5816 11.4591 39.1048 11.1302 38.6992 10.7157C38.2926 10.3011 37.9759 9.81464 37.7456 9.25621C37.5166 8.69777 37.4032 8.10164 37.4067 7.46897C37.4102 6.83631 37.5294 6.24132 37.7643 5.68517C37.9992 5.12901 38.3218 4.64595 38.7331 4.23483C39.1433 3.82371 39.6201 3.50395 40.1635 3.27212C40.7069 3.04144 41.2948 2.92724 41.9293 2.92952C42.7883 2.93409 43.5467 3.12366 44.207 3.49824C44.8673 3.87281 45.3779 4.41184 45.7402 5.11531L48.6197 3.76775C48.0202 2.59606 47.1344 1.67675 45.9623 1.00982C44.7901 0.344031 43.4579 0.00714122 41.9656 -0.000852784C40.9091 -0.00656279 39.9088 0.185293 38.9645 0.572432C38.0191 0.95957 37.1964 1.49174 36.4964 2.17009C35.7964 2.8473 35.2389 3.63985 34.8264 4.54545C34.4127 5.45106 34.2047 6.42062 34.1989 7.45184C34.193 8.48307 34.3893 9.45491 34.7855 10.3651C35.1828 11.2753 35.7239 12.0724 36.4099 12.7564C37.0959 13.4405 37.9069 13.9818 38.8406 14.3781C39.7732 14.7766 40.7817 14.9776 41.8662 14.9822Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M3.90672 0.252441H0L0.737403 1.7496V13.2381L0 14.7342H8.9657L9.77906 11.8997H3.90672V0.252441Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M10.8613 14.7342H19.6003V11.9008H14.0423V8.72494H18.3394L19.1177 6.00241H14.0423V3.07318H19.6003V0.252441H10.8613V14.7342Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M63.5688 14.7342H72.3067V11.9008H66.7498V8.72494H71.0469L71.824 6.00241H66.7498V3.07318H72.3067V0.252441H63.5688V14.7342Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M29.397 0.252441H24.8779L25.8338 2.09906L20.6147 14.7353H23.8659L24.9737 11.91H30.8519L31.9913 14.7353H35.3055L29.397 0.252441ZM26.0594 9.14063L27.9677 4.27457L29.8013 9.14063H26.0594Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M80.6094 4.23486V10.7477H82.2466V8.54591H83.9365L84.3455 7.11385H82.2466V5.71033H84.647V4.23486H80.6094Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M76.5625 4.10547C74.6553 4.10547 73.1045 5.62433 73.1045 7.4915C73.1045 9.35867 74.6553 10.8775 76.5625 10.8775C78.4697 10.8775 80.0204 9.35867 80.0204 7.4915C80.0204 5.62433 78.4685 4.10547 76.5625 4.10547ZM76.5625 9.30614C75.5423 9.30614 74.7125 8.49189 74.7125 7.4915C74.7125 6.49111 75.5423 5.67686 76.5625 5.67686C77.5827 5.67686 78.4124 6.49111 78.4124 7.4915C78.4124 8.49189 77.5827 9.30614 76.5625 9.30614Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M56.2401 14.9854C55.3099 14.9854 54.4778 14.8438 53.7451 14.5617C53.0124 14.2796 52.3918 13.8765 51.8847 13.3523C51.3775 12.8293 50.986 12.1955 50.7114 11.4509C50.4367 10.7075 50.2988 9.88065 50.2988 8.97161V0.252441H53.5125V8.80717C53.5125 9.78586 53.7451 10.5567 54.2102 11.122C54.6753 11.6873 55.352 11.9694 56.2401 11.9694C57.1283 11.9694 57.8049 11.6873 58.27 11.122C58.7351 10.5567 58.9677 9.78586 58.9677 8.80717V0.252441H62.1814V8.97276C62.1814 9.88179 62.0435 10.7086 61.7689 11.452C61.4943 12.1955 61.1028 12.8293 60.5956 13.3535C60.0884 13.8776 59.4679 14.2796 58.7351 14.5628C58.0012 14.8438 57.1703 14.9854 56.2401 14.9854Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M80.8372 23.1624L78.8365 22.7866C77.9367 22.6176 77.4412 22.1243 77.4412 21.3968C77.4412 20.4056 78.4813 19.8129 79.4863 19.8129C79.8287 19.8129 81.5325 19.8997 81.8831 21.5601L84.6399 20.2446C84.2332 19.0637 83.0155 17.0161 79.4664 17.0161C76.6045 17.0161 74.2754 19.0706 74.2754 21.5955C74.2754 23.7368 75.7408 25.307 78.1938 25.7958L80.1956 26.191C81.1843 26.3839 81.7745 26.9333 81.7745 27.6596C81.7745 28.5994 80.9599 29.1704 79.6487 29.1841C78.0582 29.2001 76.7727 28.0444 76.5741 26.907L73.9248 28.3516C74.5325 30.285 76.4046 32.0026 79.6289 32.0026C81.6576 32.0026 82.9104 31.2363 83.6034 30.5934C84.4927 29.77 85.0022 28.636 85.0022 27.4826C84.9999 25.3036 83.4047 23.6489 80.8372 23.1624Z"
+                            fill="#C28F2C"></path>
+                        <path
+                            d="M73.0452 21.6891C72.6514 20.8086 72.1138 20.0457 71.4325 19.3982C70.7501 18.7519 69.9519 18.2425 69.038 17.8702C68.123 17.4979 66.8211 17.2661 66.1258 17.2661H61.1147V31.7467H66.1165C67.1437 31.7467 68.1148 31.5651 69.0298 31.1951C69.9449 30.824 70.743 30.3158 71.4267 29.6705C72.1092 29.0242 72.6491 28.2624 73.0429 27.382C73.4379 26.5026 73.6354 25.5536 73.6366 24.5361C73.6354 23.5186 73.4391 22.5696 73.0452 21.6891ZM70.0454 26.2251C69.8198 26.7481 69.5137 27.2015 69.1268 27.5864C68.7389 27.9712 68.2784 28.2773 67.7432 28.5034C67.208 28.7295 66.6377 28.8426 66.0335 28.8426H64.2817V20.2205H66.0393C66.6447 20.2205 67.2138 20.3347 67.749 20.5619C68.2831 20.7892 68.7435 21.0952 69.1315 21.4801C69.5183 21.8661 69.8233 22.3229 70.0489 22.8528C70.2733 23.3827 70.3866 23.9434 70.3854 24.5338C70.3843 25.1402 70.2709 25.7032 70.0454 26.2251Z"
+                            fill="#C28F2C"></path>
+                    </g>
+                    <defs>
+                        <clippath id="clip0">
+                            <rect width="85" height="32" fill="white"></rect>
+                        </clippath>
+                    </defs>
+                </svg>
+            </div>
+            <div class="right">
+                <svg width="14" height="14" class="" viewBox="0 0 16 16">
+                    <title>globeIcon</title>
+                    <path
+                        d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8zm5.544 4.8h-2.36c-.256-1-.624-1.96-1.104-2.848A6.424 6.424 0 0113.536 4.8zM8 1.632A11.27 11.27 0 019.528 4.8H6.472A11.27 11.27 0 018 1.632zM1.808 9.6A6.594 6.594 0 011.6 8c0-.552.08-1.088.208-1.6h2.704A13.212 13.212 0 004.4 8c0 .544.048 1.072.112 1.6H1.808zm.656 1.6h2.36c.256 1 .624 1.96 1.104 2.848A6.39 6.39 0 012.464 11.2zm2.36-6.4h-2.36a6.39 6.39 0 013.464-2.848A12.52 12.52 0 004.824 4.8zM8 14.368A11.27 11.27 0 016.472 11.2h3.056A11.27 11.27 0 018 14.368zM9.872 9.6H6.128A11.77 11.77 0 016 8c0-.544.056-1.08.128-1.6h3.744C9.944 6.92 10 7.456 10 8s-.056 1.072-.128 1.6zm.2 4.448a12.52 12.52 0 001.104-2.848h2.36a6.424 6.424 0 01-3.464 2.848zM11.488 9.6c.064-.528.112-1.056.112-1.6s-.048-1.072-.112-1.6h2.704c.128.512.208 1.048.208 1.6s-.08 1.088-.208 1.6h-2.704z"
+                        fill="#E8E8E8"></path>
+                </svg>
+
+
+                <svg width="32" height="32" class="" viewBox="0 0 32 32">
+                    <title>burgerNav</title>
+                    <circle opacity=".07" cx="16" cy="16" r="16" fill="#F9F9F9"></circle>
+                    <path fill="#C7C7C7" d="M22 10v2H10v-2zm0 5v2H10v-2zm0 5v2H10v-2z"></path>
+                </svg>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <!-- sec1 -->
+    <section class="section1">
+        <div class="sec1">
+            <video autoplay loop muted>
+                <source
+                    src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/harbinger-l10-website/en-us/production/en-us/static/hero-0632cbf2872c5cc0dffa93d2ae8a29e8.webm?_=1">
+            </video>
+            <div class="sec1-article">
+                <img src="img/logo-800-47024e2aeaaa8651c172ba883264dd43.png" alt="">
+                <div class="bga">
+                    <div class="a">
+                        <a href="">play For Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sec2 -->
+    <section class="section2">
+        <div class="sec2">
+            <p class="s2left">FEATURED NEWS</p>
+            <div class="row sec2card">
+                <div class="col-sm-4 s2card">
+                    <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltf849faade45bb022/61e0640f8b16776549def58b/00_Header.jpg?quality=90&crop=1%3A1&width=120"
+                        alt="">
+                    <div class="d-flex s2cardr">
+                        <h6>GAME UPDATES</h6>
+                        <span>Champion Insights: Zeri</span>
+                        <p>What you get when you combine electricity, Tagalog, and a sweet gun.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 s2card">
+                    <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltb3414ba2be53f934/61e1d1b5c5ff2e754efb0262/W2021_ShowOpen-BTS_textless-optimized.jpg?quality=90&crop=1%3A1&width=120"
+                        alt="">
+                    <div class="d-flex s2cardr">
+                        <h6>Media</h6>
+                        <span>Making the Worlds 2021 Show Open</span>
+                        <p>Faced with a series of unprecedented challenges, Riot Games and their team of partners rally
+                            to bring Arcane to life on our largest global stage: the Worlds 2021 Show Open, presented by
+                            Mastercard.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 s2card">
+                    <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blta982444f1b1f6489/61df579b14ef402247ceb740/011422_QuickGameplayThoughts_Banner.jpg?quality=90&crop=1%3A1&width=120"
+                        alt="">
+                    <div class="d-flex s2cardr">
+                        <h6>Dev</h6>
+                        <span>Quick Gameplay Thoughts 1/14: Preseason 2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sec3 -->
+    <section class="section3">
+        <div class="sec3">
+            <div class="sec3-bg">
+                <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt7b5cec2ca7824d2e/614d0ca364c8007a9bdec21f/arcane_league_promo_module_updated.jpg"
+                    alt="">
+            </div>
+            <div class="s3card">
+                <p>WEBSITE</p>
+                <h3>Arcane: League of Legends</h3>
+                <p>Learn more about Arcane, a new animated series from the world of League of Legends.</p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <!-- sec4 -->
+    <section class="section4">
+        <div class="sec4top">
+            <h6>Choose Your</h6>
+            <h1>CHAMPION</h1>
+            <p>Whether you like to dive straight into the fray, support your teammates, or something in between, there’s
+                a spot for you on the Rift.</p>
+            <div class="as">
+                <a href="" class="a1">Discover More Champions</a>
+                <a href="" class="a2">Play Now</a>
+            </div>
+        </div>
+
+        <div class="sec4bot">
+            <div class="sec4botl">
+                <div class="d-flex">
+                    <div class="sec4li1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="s4svg">
+                            <path
+                                d="M56.59 73.71l1.67-2.88c5.75-9.34 5.51-16 3.83-20.59a39.78 39.78 0 01-9.1 16 2 2 0 01-1.43.48H48.2a2.17 2.17 0 01-1.67-.72 39.78 39.78 0 01-9.1-16c-1.68 4.55-1.68 11.26 3.83 20.59l1.68 2.88-3.36 5.75 10.06 17.72L59.7 79.22z">
+                            </path>
+                            <path
+                                d="M73.11 38.74c-3.35-4.31-6-10-6-18.91 0-4.07-3.59-8.15-7.66-12-4.79-4.31-5.75-5.74-9.58-5.74s-4.79 1.43-9.34 5.74c-4.07 3.83-7.66 7.91-7.66 12 0 8.86-2.88 14.6-6 18.68L12.76 52.87 2.23 45.69v12.93S2.47 84 39.58 97.89c0 0-14.13-7.18-16.28-31.13-.24-1.67-.24-9.1-.24-10.29A119.77 119.77 0 0036.71 74c-.72-1.2-1.44-2.64-2.16-3.83-5-10.54-4.07-18.2-1.67-23.47a22.77 22.77 0 017.42-8.86l9.58 9.58 9.58-9.58a22.77 22.77 0 017.42 8.86c2.4 5.27 3.59 12.93-1.43 23.23-.72 1.38-1.45 2.58-2.16 4.07a119.77 119.77 0 0013.65-17.53c0 1.19 0 8.62-.24 10.29-2.39 23.95-16.28 31.13-16.28 31.13C97.53 84 97.77 58.62 97.77 58.62V45.69l-10.53 7.18z">
+                            </path>
+                        </svg>
+                        <p>ASSASSINS</p>
+                        <div class="s4circle"></div>
+                    </div>
+
+                    <div class="sec4li2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="s4svg">
+                            <path
+                                d="M67.84 56.35v5.5c8.62-8.62 14.37 0 14.37 0C112.14 40.78 90.35 2 90.35 2s-.72 17.24-15.08 27.77v16.52c-.24 4.79-3.84 7.9-7.43 10.06M17.79 62.09s4.07-6.46 10.78-2.63L20.91 48.2l6.7-16c-17.24-10.54-18-29.93-18-29.93S-12.14 41 17.79 62.09M26.89 83.89l5.51-18.68-.24-.48L19.23 77.9A17.78 17.78 0 017.5 83.17H3l-1 2.39 12 11.5zM92.27 83.89a16.24 16.24 0 01-11.74-5.27L68.8 66.88l3.83 17.72L85.8 98l12-11.49-1-2.4zM55.87 42.7c0 .24-.24.48-.24.71h.72c5.75.48 7.66 2.64 9.1 7.67a9.35 9.35 0 002.39-1.92c1-1 1.68-1.67 1.68-2.63V28.09a2 2 0 00-1.68-1.92l-31.37-5.74H36a2.39 2.39 0 00-2.39 2.39v6.71l24.9 3.35z">
+                            </path>
+                            <path
+                                d="M60.18 54c-1.2-5.27-1.44-4.55-5.75-4.79L40.78 48v-3.87h5.51A4.09 4.09 0 0050.36 41l1-3.35L32.4 35l-5 12.22 11.74 17-5.54 18.47L49.88 98l16.53-15.07s-6.23-28.5-6.23-29M49.88 2.23l-4.79 10.29 4.79 3.83 4.79-3.83zM62.1 9.41l1.43 6h6l2.87-11zM30.25 15.4h6l.24-.72 1.2-5.27-10.3-5z">
+                            </path>
+                        </svg>
+                        <p>FIGHTERS</p>
+                        <div class="s4circle"></div>
+                    </div>
+
+                    <div class="sec4li3">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="s4svg">
+                            <path
+                                d="M84.48 77.3h13.41l-3.83-12.93h-9.58a36.73 36.73 0 00-27.54 12.45L50 85l-6.94-8.14a36.73 36.73 0 00-27.54-12.49H5.94L2.11 77.3h13.41a36.73 36.73 0 0127.54 12.45l.71.72h-9.1v7.42h30.9v-7.42h-9.1l.71-.72a35.85 35.85 0 0127.3-12.45">
+                            </path>
+                            <path
+                                d="M56.23 54.31L50 62.21l-6.23-7.9a5.42 5.42 0 01-.24-6.47L50 37.31l6.47 10.53a5.42 5.42 0 01-.24 6.47M42.58 28.93l-7.91 12.69a13.37 13.37 0 00.72 15.09L50 75.14l14.61-18.43a13 13 0 00.72-15.09L50 17l-.48.72a5.58 5.58 0 01-4.31 1.68c-4.07 0-7.18-8.62 4.55-17.24 0 0-28.74 5.5-14.85 30.41z">
+                            </path>
+                        </svg>
+                        <p>MAGES</p>
+                        <div class="s4circle"></div>
+                    </div>
+
+                    <div class="sec4li4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="s4svg">
+                            <path
+                                d="M28.69 27.25h6.94l1.92-6.94-13.41-7.91zM71.31 27.25l4.55-14.85-13.41 7.91 1.92 6.94zM71.31 35.39c-1.43 0-12.21-3.83-12.21-3.83L50 42.34l-9.1-10.78s-10.54 3.83-12.21 3.83c-7.67 0-4.79-7.18-4.79-7.18S4.26 48.32 2.11 64.13c0 0 5.74-8.86 24.42-13.17a26.22 26.22 0 0013.89 12.93c-.72-3.11-1.44-6.71-2.15-10.06a22.36 22.36 0 01-3.84-4.31c.72 0 7.19-.72 8.15-.72.71 2.64 4.55 28.74 4.55 28.74l-7 10.3v10L50 93.82l9.82 4.07V87.6l-7-10.3s3.84-26.1 4.55-28.74c.72 0 7.19.72 8.15.72a16.52 16.52 0 01-3.84 4.31 98.08 98.08 0 00-2.15 10.06 25.33 25.33 0 0013.94-12.93c18.68 4.55 24.42 13.17 24.42 13.17C95.74 48.32 76.1 28 76.1 28s2.88 7.42-4.79 7.42">
+                            </path>
+                            <path d="M50 2.11l-7.66 21.31h.24L50 33.24l7.42-9.82h.24z"></path>
+                        </svg>
+                        <p>MARKSMEN</p>
+                        <div class="s4circle"></div>
+                    </div>
+
+                    <div class="sec4li5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="s4svg">
+                            <path
+                                d="M90.4 2.11c0 27.3-25.4 36.63-25.4 36.63L60.94 61a8.39 8.39 0 00-.48 2.39 6.95 6.95 0 0013.89 0 6.7 6.7 0 00-5.75-6.7c6.71-11.5 16.29-6 16.29-6 1.43-1.44 2.63-2.88 3.83-4.07l-7.19-2.88h9.34a38.5 38.5 0 005.75-11.25L87 28.69h10.3a33 33 0 00-6.9-26.58M35.32 38.74S9.93 29.41 9.93 2.11c0 0-9.82 10.77-7.42 26.1h10.3L3.23 32a41.09 41.09 0 004.07 8.9h11l-8.61 3.59a39.83 39.83 0 005.27 6s9.58-5.51 16.29 6a6.7 6.7 0 00-5.75 6.7 6.95 6.95 0 1013.41-2.39zM45.14 22.7l2.63-6.7h4.79l2.63 6.94-5 13.89zm-1-16l-7 16 10.15 25.38v23.71l-5 16 5 10H53l5-10-5-16V48.08L63.1 22.7l-7-16z">
+                            </path>
+                        </svg>
+                        <p>SUPPORTS</p>
+                        <div class="s4circle"></div>
+                    </div>
+
+                    <div class="sec4li6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="s4svg">
+                            <path
+                                d="M85.92 63.89L55 90V67.48h7.42v-9.1H37.55v9.1H45v22.75L14.08 63.89 8.33 21l27.54-10.51a39.13 39.13 0 0128.26 0L91.67 21zM66.28 5a47.61 47.61 0 00-32.56 0L2.11 17.19l6.7 49.57L41.86 95A13 13 0 0050 97.89 12.5 12.5 0 0058.14 95l33.05-28.24 6.7-49.57z">
+                            </path>
+                            <path
+                                d="M78.74 32.28L62 21.26v5.27H38v-5.27l-16.26 7.19a2.9 2.9 0 00-1.67 3.11l4.31 19.16a3.22 3.22 0 002.15 2.15l11.26 2.4V50h23.94v5.27l11.5-2.4a2.52 2.52 0 002.15-2.15l4.31-15.57a2.39 2.39 0 00-1-2.87M57.42 20.07H42.58L50 11.68z">
+                            </path>
+                        </svg>
+                        <p>TANKS</p>
+                        <div class="s4circle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec4rimg1">
+                <img src="img/assassin-d64d3ffdda15e1eed637aefe6a2c7fee.png" alt="">
+            </div>
+            <div class="sec4rimg2" hidden>
+                <img src="https://www.leagueoflegends.com/static/fighter-7a08920b696ecdb673edeeae1d3c616e.png" alt="">
+            </div>
+            <div class="sec4rimg3" hidden>
+                <img src="https://www.leagueoflegends.com/static/mage-3bfa6dfe620adafe5e539c2e470f4acc.png" alt="">
+            </div>
+            <div class="sec4rimg4" hidden>
+                <img src="https://www.leagueoflegends.com/static/marksman-b339ed8fd7e04ff2c3fca022c5d299fb.png" alt="">
+            </div>
+            <div class="sec4rimg5" hidden>
+                <img src="https://www.leagueoflegends.com/static/support-d63ae08baf517425864ddc020a5871d5.png" alt="">
+            </div>
+            <div class="sec4rimg6" hidden>
+                <img src="https://www.leagueoflegends.com/static/tank-1245abc326bd98c567ab22659719a1a3.png" alt="">
+            </div>
+        </div>
+
+
+    </section>
+    <!-- sec5 -->
+    <section class="section5">
+        <div class="sec5bg">
+            <!-- <img src="https://www.leagueoflegends.com/static/championstyle_01-dc617921291c69586acbebec745b4191.png"
+                alt="" class="bg1">
+            <img src="https://www.leagueoflegends.com/static/championstyle_02-95fa98258784f905be83831947a1f07c.png"
+                alt="" class="bg2"> -->
+            <div class="sec5-article">
+                <div class="sec5left"></div>
+                <div class="sec5mid">
+                    <div class="img1">
+                        <img src="https://www.leagueoflegends.com/static/assassin-four-d763afcd430fe6194d5640d6bf2a5941.png"
+                            alt="">
+                    </div>
+                    <div class="img2">
+                        <img src="https://www.leagueoflegends.com/static/assassin-two-3a0fb5383eca19a4bc9b3c53310380bf.png"
+                            alt="">
+                    </div>
+                    <div class="img3">
+                        <img src="https://www.leagueoflegends.com/static/assassin-three-3b9f65b6c20d5779628f7a8b04b43819.png"
+                            alt="">
+                    </div>
+                </div>
+                <div class="sec5r">
+                    <h6>SLAY WITH</h6>
+                    <h1>STYLE</h1>
+                    <p>Make it personal by changing up the look of your<br> favorite champions with skins.</p>
+                    <a href="">PLAY NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sec6 -->
+    <section class="section6">
+        <div class="sec6">
+            <div class="sec6bg1">
+                <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltc28d43095579c8b5/5d87c24e8d8a3163705e3070/summonersrift.jpg"
+                    alt="" id="bg1">
+                <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt13186c22cf0a2f30/5d87c24e3166f22df2ab8dc4/howlingabyss.jpg"
+                    alt="" id="bg2" hidden>
+                <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltf930a7a2b83fff60/5e17887df980a27e5b76ac2f/teamfighttactics.jpg"
+                    alt="" id="bg3" hidden>
+            </div>
+
+            <div class="section6-article">
+                <div class="sec6left">
+                    <h5>MULTIPLE WAYS TO</h5>
+                    <h1>PLAY</h1>
+                    <a href="">PLAY NOW</a>
+                </div>
+
+                <div class="sec6mid">
+                    <div class="v1">
+                        <video preload="metadata" autoplay loop muted="muted">
+                            <source
+                                src="https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/blt04d1a8eb899e9dd4/5d87c234c7fab32df76ddee5/summonersrift.mp4"
+                                srcset="720w https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/blt04d1a8eb899e9dd4/5d87c234c7fab32df76ddee5/summonersrift.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p>THE MOST POPULAR GAME MODE
+
+                            Clear your lane, dive into epic 5v5 team fights, and destroy the enemy nexus before they
+                            destroy yours.</p>
+                    </div>
+                    <div class="v2" hidden>
+                        <video preload="metadata" autoplay loop muted="muted">
+                            <source
+                                src="https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/blt368bbe12c8917439/5d87c69c5b3acf6e5c6efa6a/howlingabyss.mp4"
+                                srcset="720w https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/blt368bbe12c8917439/5d87c69c5b3acf6e5c6efa6a/howlingabyss.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p>ALL RANDOM, ALL MID
+
+                            Battle across an icy bridge as your team of random champions charge toward the enemy Nexus
+                            in this chaotically fun 5v5 game mode.</p>
+                    </div>
+                    <div class="v3" hidden>
+                        <video preload="metadata" autoplay loop muted="muted">
+                            <source
+                                src="https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/blt358cbfdb47618c25/5d87c2345b3acf6e5c6efa5e/teamfighttactics.mp4"
+                                srcset="720w https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/blt358cbfdb47618c25/5d87c2345b3acf6e5c6efa5e/teamfighttactics.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p>A FREE-FOR-ALL WAR FOR SUPREMACY
+
+                            Assemble a squad of champions that battle on your behalf. Outlast all seven of your
+                            opponents and become the last person standing.</p>
+                    </div>
+                </div>
+
+                <div class="sec6right">
+                    <div class="r1">
+                        <p>SUMMONER'S<br>RIFT</p>
+                        <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt09b786139c8ce289/5d87c2420ca4b562bfff0abe/summonersrift.jpg"
+                            alt="">
+                    </div>
+                    <div class="r2">
+                        <p>ARAM</p>
+                        <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blta1f5513b0207fc88/5d87c2428dbc4162c496928b/howlingabyss.jpg"
+                            alt="">
+                    </div>
+                    <div class="r3">
+                        <p>TEAMFIGHT TACTICS</p>
+                        <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt7bb04c5fde905d4b/5e17889f9bcbce578d63ee51/teamfighttactics.jpg"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sec7 -->
+    <section class="section7">
+        <div class="sec7">
+            <img src="https://www.leagueoflegends.com/static/player-guide-map-1440-32575baa2f8d2b2bfd5cfd07e11d1361.png"
+                alt="" width="70%">
+            <div class="sec7right">
+                <h6>START YOUR</h6>
+                <h1>LEGEND</h1>
+                <p>New to League? Get a rundown on the basics for the most popular game mode.</p>
+                <div class="as">
+                    <a href="" class="a1">Get Started</a>
+                    <a href="" class="a2">Play For Free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sec8 -->
+    <section class="section8">
+        <div class="sec8top">
+            <h6>MORE TO</h6>
+            <h1>DISCOVER</h1>
+        </div>
+        <div class="cards" id="cards">
+            <div class="cardd">
+                <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt2a8901053cf0a779/61aedde71dbfc323d33b1030/120921_TFTPairsDoubleUp_Banner.jpg?quality=90&width=1380"
+                    alt="">
+                <span>Announcing Double Up's First Global Tournament: Hextech Havoc</span>
+            </div>
+            <div class="cardd">
+                <img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt8893354da13c0083/61849d79953e1e6504008797/LEXP21_PORTAL_SPLASH_06_crop-copy.jpg?quality=90&width=1380"
+                    alt="">
+                <span>The Council Archives Primer</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- sec9 -->
+    <section class="sec9">
+        <video autoplay loop muted>
+            <source
+                src="https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/bltfa2accf67922dd3a/5f495972a11538653ea58f65/ss2020_lux_sylas_1920x1080.mp4"
+                srcset="1920w https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/bltfa2accf67922dd3a/5f495972a11538653ea58f65/ss2020_lux_sylas_1920x1080.mp4"
+                type="video/mp4">
+        </video>
+    </section>
+
+    <!-- footer -->
+    <footer class="pc-footer">
+        <div class="">
+            <div class="foottop">
+                <h6>TAKE LEAGUE WITH YOU</h6>
+                <p>Download the League app to stay connected to friends and the latest game and esports news.</p>
+                <div class="">
+                    <img src="https://www.leagueoflegends.com/static/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.2928664f.svg"
+                        alt="">
+                    <img src="https://www.leagueoflegends.com/static/en_get.b89beec4.svg" alt="" style="width: 35%;">
+                </div>
+            </div>
+        </div>
+        <div class="foot1">
+            <div class="container">
+                <div class="ftul1">
+                    <ul>
+                        <li><a href="">ABOUT LEAGUE OF LEGENDS</a>
+                            <a href="">Help Us Improve</a>
+                            <a href="">Server Status</a>
+                            <a href="">Support</a>
+                            <a href="">Esports Pro Site</a>
+                            <a href="">Download Riot Mobile Companion App</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <svg width="80" height="32" class="" viewBox="0 0 109 35">
+                        <title>riotLogo-mobile</title>
+                        <path
+                            d="M17.714 31.681l-1.576-4.09 15.219.79-.684 6.545-12.96-3.245zM21.36 0L.062 10.143l3.293 15.284H7.7l-.75-10.932.667-.21 2.612 11.142h4.513l-.167-13.317.667-.21 2.282 13.527h4.78L23.43 9.341l.667-.21 1.181 16.296h6.32l2.224-22.37L21.359 0zm84.102 31.125l-6.06-1.035.027-.8 5.799-.216-.148-1.527h-7.455l-.382 3.834 6.162 1.08.029.706-6.412.252-.158 1.527h8.974l-.376-3.82zm-57.895-.572l-.093 1.384 2.208.075-.029 1.404-4.618-.136.202-4.06 6.352-.15-.093-1.526h-8.204l-.735 7.4h9.346l-.24-4.463-4.096.072zm39.566 2.717l-.045-1.274 4.372-.052.041-1.391-4.464-.055-.045-1.291 5.883-.14.048-1.523h-7.934l-.237 7.4h8.319l-.058-1.528-5.88-.146zm-6.406 1.673l-.735-7.4h-2.111l-3.037 3.527-3.032-3.526H69.7l-.735 7.4h2.48l.238-4.799 3.161 3.271 3.165-3.271.237 4.798h2.481zM70.3.454h-4.965l-.453 22.877h5.998L70.3.454zm20.188.008h-15.48l-.602 22.868h17.183L90.488.462zm-4.801 17.892l-5.479.178-.183-13.457 5.729.175-.067 13.104zM109 5.459l-.552-5.005H93.194l.128 4.458 4.882.172.497 18.247h6.011L102.915 5.25l6.085.21zM55.624 23.331h6.515l-4.246-10.269 3.389-1.867L58.965.454H42.33l-.545 4.956 3.72-.126-1.795 18.047h5.822l.157-5.752 4.195-2.31 1.74 8.062zM50.033 5.132l4.785-.162.546 4.559-5.524 2.63.193-7.027zm12.908 29.811h2.513l-1.986-7.4h-5.896l-1.986 7.4h2.513l.388-1.867 4.079.052.375 1.815zm-4.15-3.336l.505-2.42 2.423-.11.507 2.43-3.434.1z"
+                            fill="#E6E6E6"></path>
+                    </svg>
+                </div>
+                <div class="foot1svg2">
+                    <a href="">
+                        <svg class="" viewBox="0 0 24 24">
+                            <title>youtube</title>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm5.47-16.231c.602.148 1.077.583 1.237 1.136C19 9.908 19 12 19 12s0 2.092-.293 3.095c-.16.553-.635.988-1.238 1.136C16.38 16.5 12 16.5 12 16.5s-4.378 0-5.47-.268c-.602-.149-1.077-.584-1.237-1.137C5 14.092 5 12 5 12s0-2.092.293-3.095c.16-.553.635-.988 1.237-1.136C7.622 7.5 12 7.5 12 7.5s4.378 0 5.47.269zM14.226 12l-3.659-1.9v3.8l3.66-1.9z"
+                                fill="#7e7e7e"></path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg class="" viewBox="0 0 24 24">
+                            <title>twitter</title>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm5.575-13.903c0 3.67-2.89 7.903-8.172 7.903v-.002A8.336 8.336 0 015 16.752a5.89 5.89 0 004.251-1.151c-.6-.01-1.18-.203-1.662-.548a2.785 2.785 0 01-1.022-1.38c.43.08.875.063 1.297-.048a2.891 2.891 0 01-1.654-.964 2.722 2.722 0 01-.65-1.759v-.035c.4.215.847.334 1.304.347A2.78 2.78 0 015.66 9.531a2.7 2.7 0 01.314-2.024 8.11 8.11 0 002.641 2.06c1.02.5 2.137.786 3.28.842a2.695 2.695 0 01.181-1.777 2.82 2.82 0 011.262-1.303 2.96 2.96 0 011.821-.292 2.907 2.907 0 011.63.838 5.876 5.876 0 001.824-.674 2.805 2.805 0 01-1.263 1.537A5.886 5.886 0 0019 8.3a5.74 5.74 0 01-1.433 1.437c.008.12.008.239.008.36z"
+                                fill="#7e7e7e"></path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg class="" viewBox="0 0 24 24">
+                            <title>facebook</title>
+                            <path
+                                d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.874V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z"
+                                fill="#7e7e7e"></path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg class="" viewBox="0 0 24 24">
+                            <title>instagram</title>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm2.829-17.698c-.739-.034-.96-.04-2.829-.04-1.87 0-2.09.006-2.829.04-.682.031-1.053.145-1.3.241-.326.127-.56.278-.805.523a2.171 2.171 0 00-.523.805c-.096.247-.21.618-.24 1.3-.035.739-.042.96-.042 2.829 0 1.87.007 2.09.041 2.829.031.682.145 1.053.241 1.3.127.326.278.56.523.804.246.245.479.397.805.524.247.096.618.21 1.3.24.738.035.96.042 2.829.042 1.87 0 2.09-.008 2.829-.041.682-.031 1.053-.145 1.3-.241.326-.127.56-.278.804-.524.245-.245.397-.478.524-.805.096-.246.21-.617.24-1.3.035-.738.042-.959.042-2.828 0-1.87-.008-2.09-.041-2.829-.031-.682-.145-1.053-.241-1.3a2.164 2.164 0 00-.524-.805 2.172 2.172 0 00-.805-.523c-.246-.096-.617-.21-1.3-.24zm-5.715-1.26C9.86 5.008 10.099 5 12 5c1.901 0 2.14.008 2.886.042.745.034 1.254.153 1.7.325.46.18.85.419 1.24.808.389.389.628.78.807 1.24.173.445.291.954.325 1.699.035.746.043.985.043 2.886 0 1.901-.009 2.14-.043 2.886-.034.745-.152 1.254-.325 1.7a3.43 3.43 0 01-.807 1.24c-.39.389-.78.628-1.24.807-.445.173-.955.291-1.7.325-.746.034-.985.042-2.886.042-1.9 0-2.14-.008-2.886-.042-.745-.034-1.254-.152-1.7-.325a3.43 3.43 0 01-1.239-.808 3.428 3.428 0 01-.807-1.24c-.173-.445-.292-.954-.326-1.699C5.008 14.14 5 13.901 5 12c0-1.901.008-2.14.042-2.886.034-.745.153-1.254.326-1.7.178-.46.418-.85.807-1.239.389-.39.78-.628 1.24-.807.445-.173.954-.292 1.699-.326zM12 8.405a3.594 3.594 0 100 7.19 3.594 3.594 0 000-7.19zm0 5.928a2.333 2.333 0 110-4.666 2.333 2.333 0 010 4.666zm4.577-6.07a.84.84 0 11-1.68 0 .84.84 0 011.68 0z"
+                                fill="#7e7e7e"></path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg class="" viewBox="0 0 1000 1000">
+                            <title></title>
+                            <path
+                                d="M500 1000C223.9 1000 0 776.1 0 500S223.9 0 500 0s500 223.9 500 500-223.9 500-500 500z"
+                                fill="#7e7e7e"></path>
+                            <path class="st1"
+                                d="M614.6 604.2c-28.7 0-52.1-23.4-52.1-52.1 0-28.7 23.4-52.1 52.1-52.1s52.1 23.4 52.1 52.1c0 28.7-23.4 52.1-52.1 52.1m9.2 85.5C588.2 725.2 520.1 728 500.1 728s-88.2-2.8-123.7-38.3c-5.3-5.3-5.3-13.8 0-19.1 5.3-5.3 13.8-5.3 19.1 0C417.9 693 465.8 701 500.1 701c34.2 0 82.2-8 104.6-30.4 5.3-5.3 13.8-5.3 19.1 0 5.2 5.3 5.2 13.8 0 19.1M333.3 552.1c0-28.7 23.4-52.1 52.1-52.1 28.7 0 52.1 23.4 52.1 52.1 0 28.7-23.4 52.1-52.1 52.1-28.7 0-52.1-23.4-52.1-52.1m500-52.1c0-40.3-32.6-72.9-72.9-72.9-19.7 0-37.5 7.8-50.6 20.5-49.8-36-118.5-59.2-195-61.9L548 229.4l108.5 23.1c1.3 27.6 23.9 49.6 51.8 49.6 28.8 0 52.1-23.3 52.1-52.1s-23.3-52.1-52.1-52.1c-20.5 0-38 11.9-46.5 29.1l-121.2-25.8c-3.4-.7-6.9-.1-9.8 1.8-2.9 1.9-4.9 4.8-5.6 8.2l-36.4 171.5c-.2 1 0 1.9 0 2.9-77.9 2-147.9 25.3-198.5 61.8-13.1-12.6-30.8-20.3-50.4-20.3-40.3 0-72.9 32.7-72.9 72.9 0 29.6 17.7 55.1 43.1 66.5-1.1 7.2-1.7 14.6-1.7 22.1 0 112.2 130.6 203.1 291.7 203.1s291.7-90.9 291.7-203.1c0-7.4-.6-14.7-1.7-21.9 25.3-11.4 43.2-36.9 43.2-66.7">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footp1">
+                    <p>™ & © 2021 Riot Games, Inc. League of Legends and all related logos, characters, names and<br>
+                        distinctive likenesses thereof are exclusive property of Riot Games, Inc. All Rights Reserved.
+                    </p>
+                </div>
+                <div class="footul2">
+                    <ul>
+                        <li>
+                            <a href="">Privacy Notice</a>
+                        </li>
+                        <li>
+                            <a href="">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="">Cookie Preferences</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="foot15">
+                    <img src="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt873108b7788eccd8/5e4ce144f2815f2507d7571b/na-esrb.png?&height=97&disable=upscale"
+                        alt="">
+                    <p>Blood<br>Fantasy Violence<br>Mild Suggestive Themes<br>Use of Alcohol and Tobacco<br>Online
+                        Interactions Not Rated by the ESRB</p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- mobile footer -->
+    <footer class="mb-footer">
+        <div class="foottopp">
+            <div class="foottop">
+                <h6>TAKE LEAGUE WITH YOU</h6>
+                <p>Download the League app to stay connected to friends and the latest game and esports news.</p>
+                <div class="footr">
+                    <img src="https://www.leagueoflegends.com/static/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.2928664f.svg"
+                        alt="">
+                    <img src="https://www.leagueoflegends.com/static/en_get.b89beec4.svg" alt="" style="width: 35%;">
+                </div>
+            </div>
+        </div>
+
+        <div class="foot1">
+            <div class="container">
+                <div class="ftul1">
+                    <ul>
+                        <li><a href="">ABOUT LEAGUE OF LEGENDS</a>
+                            <a href="">Help Us Improve</a>
+                            <a href="">Server Status</a>
+                            <a href="">Support</a>
+                            <a href="">Esports Pro Site</a>
+                            <a href="">Download Riot Mobile Companion App</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <svg width="80" height="32" class="" viewBox="0 0 109 35">
+                        <title>riotLogo-mobile</title>
+                        <path
+                            d="M17.714 31.681l-1.576-4.09 15.219.79-.684 6.545-12.96-3.245zM21.36 0L.062 10.143l3.293 15.284H7.7l-.75-10.932.667-.21 2.612 11.142h4.513l-.167-13.317.667-.21 2.282 13.527h4.78L23.43 9.341l.667-.21 1.181 16.296h6.32l2.224-22.37L21.359 0zm84.102 31.125l-6.06-1.035.027-.8 5.799-.216-.148-1.527h-7.455l-.382 3.834 6.162 1.08.029.706-6.412.252-.158 1.527h8.974l-.376-3.82zm-57.895-.572l-.093 1.384 2.208.075-.029 1.404-4.618-.136.202-4.06 6.352-.15-.093-1.526h-8.204l-.735 7.4h9.346l-.24-4.463-4.096.072zm39.566 2.717l-.045-1.274 4.372-.052.041-1.391-4.464-.055-.045-1.291 5.883-.14.048-1.523h-7.934l-.237 7.4h8.319l-.058-1.528-5.88-.146zm-6.406 1.673l-.735-7.4h-2.111l-3.037 3.527-3.032-3.526H69.7l-.735 7.4h2.48l.238-4.799 3.161 3.271 3.165-3.271.237 4.798h2.481zM70.3.454h-4.965l-.453 22.877h5.998L70.3.454zm20.188.008h-15.48l-.602 22.868h17.183L90.488.462zm-4.801 17.892l-5.479.178-.183-13.457 5.729.175-.067 13.104zM109 5.459l-.552-5.005H93.194l.128 4.458 4.882.172.497 18.247h6.011L102.915 5.25l6.085.21zM55.624 23.331h6.515l-4.246-10.269 3.389-1.867L58.965.454H42.33l-.545 4.956 3.72-.126-1.795 18.047h5.822l.157-5.752 4.195-2.31 1.74 8.062zM50.033 5.132l4.785-.162.546 4.559-5.524 2.63.193-7.027zm12.908 29.811h2.513l-1.986-7.4h-5.896l-1.986 7.4h2.513l.388-1.867 4.079.052.375 1.815zm-4.15-3.336l.505-2.42 2.423-.11.507 2.43-3.434.1z"
+                            fill="#E6E6E6"></path>
+                    </svg>
+                </div>
+                <div class="foot1svg2">
+                    <a href="">
+                        <svg class="" viewBox="0 0 24 24">
+                            <title>youtube</title>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm5.47-16.231c.602.148 1.077.583 1.237 1.136C19 9.908 19 12 19 12s0 2.092-.293 3.095c-.16.553-.635.988-1.238 1.136C16.38 16.5 12 16.5 12 16.5s-4.378 0-5.47-.268c-.602-.149-1.077-.584-1.237-1.137C5 14.092 5 12 5 12s0-2.092.293-3.095c.16-.553.635-.988 1.237-1.136C7.622 7.5 12 7.5 12 7.5s4.378 0 5.47.269zM14.226 12l-3.659-1.9v3.8l3.66-1.9z"
+                                fill="#7e7e7e"></path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg class="" viewBox="0 0 24 24">
+                            <title>twitter</title>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm5.575-13.903c0 3.67-2.89 7.903-8.172 7.903v-.002A8.336 8.336 0 015 16.752a5.89 5.89 0 004.251-1.151c-.6-.01-1.18-.203-1.662-.548a2.785 2.785 0 01-1.022-1.38c.43.08.875.063 1.297-.048a2.891 2.891 0 01-1.654-.964 2.722 2.722 0 01-.65-1.759v-.035c.4.215.847.334 1.304.347A2.78 2.78 0 015.66 9.531a2.7 2.7 0 01.314-2.024 8.11 8.11 0 002.641 2.06c1.02.5 2.137.786 3.28.842a2.695 2.695 0 01.181-1.777 2.82 2.82 0 011.262-1.303 2.96 2.96 0 011.821-.292 2.907 2.907 0 011.63.838 5.876 5.876 0 001.824-.674 2.805 2.805 0 01-1.263 1.537A5.886 5.886 0 0019 8.3a5.74 5.74 0 01-1.433 1.437c.008.12.008.239.008.36z"
+                                fill="#7e7e7e"></path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg class="" viewBox="0 0 24 24">
+                            <title>facebook</title>
+                            <path
+                                d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.874V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z"
+                                fill="#7e7e7e"></path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg class="" viewBox="0 0 24 24">
+                            <title>instagram</title>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm2.829-17.698c-.739-.034-.96-.04-2.829-.04-1.87 0-2.09.006-2.829.04-.682.031-1.053.145-1.3.241-.326.127-.56.278-.805.523a2.171 2.171 0 00-.523.805c-.096.247-.21.618-.24 1.3-.035.739-.042.96-.042 2.829 0 1.87.007 2.09.041 2.829.031.682.145 1.053.241 1.3.127.326.278.56.523.804.246.245.479.397.805.524.247.096.618.21 1.3.24.738.035.96.042 2.829.042 1.87 0 2.09-.008 2.829-.041.682-.031 1.053-.145 1.3-.241.326-.127.56-.278.804-.524.245-.245.397-.478.524-.805.096-.246.21-.617.24-1.3.035-.738.042-.959.042-2.828 0-1.87-.008-2.09-.041-2.829-.031-.682-.145-1.053-.241-1.3a2.164 2.164 0 00-.524-.805 2.172 2.172 0 00-.805-.523c-.246-.096-.617-.21-1.3-.24zm-5.715-1.26C9.86 5.008 10.099 5 12 5c1.901 0 2.14.008 2.886.042.745.034 1.254.153 1.7.325.46.18.85.419 1.24.808.389.389.628.78.807 1.24.173.445.291.954.325 1.699.035.746.043.985.043 2.886 0 1.901-.009 2.14-.043 2.886-.034.745-.152 1.254-.325 1.7a3.43 3.43 0 01-.807 1.24c-.39.389-.78.628-1.24.807-.445.173-.955.291-1.7.325-.746.034-.985.042-2.886.042-1.9 0-2.14-.008-2.886-.042-.745-.034-1.254-.152-1.7-.325a3.43 3.43 0 01-1.239-.808 3.428 3.428 0 01-.807-1.24c-.173-.445-.292-.954-.326-1.699C5.008 14.14 5 13.901 5 12c0-1.901.008-2.14.042-2.886.034-.745.153-1.254.326-1.7.178-.46.418-.85.807-1.239.389-.39.78-.628 1.24-.807.445-.173.954-.292 1.699-.326zM12 8.405a3.594 3.594 0 100 7.19 3.594 3.594 0 000-7.19zm0 5.928a2.333 2.333 0 110-4.666 2.333 2.333 0 010 4.666zm4.577-6.07a.84.84 0 11-1.68 0 .84.84 0 011.68 0z"
+                                fill="#7e7e7e"></path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg class="" viewBox="0 0 1000 1000">
+                            <title></title>
+                            <path
+                                d="M500 1000C223.9 1000 0 776.1 0 500S223.9 0 500 0s500 223.9 500 500-223.9 500-500 500z"
+                                fill="#7e7e7e"></path>
+                            <path class="st1"
+                                d="M614.6 604.2c-28.7 0-52.1-23.4-52.1-52.1 0-28.7 23.4-52.1 52.1-52.1s52.1 23.4 52.1 52.1c0 28.7-23.4 52.1-52.1 52.1m9.2 85.5C588.2 725.2 520.1 728 500.1 728s-88.2-2.8-123.7-38.3c-5.3-5.3-5.3-13.8 0-19.1 5.3-5.3 13.8-5.3 19.1 0C417.9 693 465.8 701 500.1 701c34.2 0 82.2-8 104.6-30.4 5.3-5.3 13.8-5.3 19.1 0 5.2 5.3 5.2 13.8 0 19.1M333.3 552.1c0-28.7 23.4-52.1 52.1-52.1 28.7 0 52.1 23.4 52.1 52.1 0 28.7-23.4 52.1-52.1 52.1-28.7 0-52.1-23.4-52.1-52.1m500-52.1c0-40.3-32.6-72.9-72.9-72.9-19.7 0-37.5 7.8-50.6 20.5-49.8-36-118.5-59.2-195-61.9L548 229.4l108.5 23.1c1.3 27.6 23.9 49.6 51.8 49.6 28.8 0 52.1-23.3 52.1-52.1s-23.3-52.1-52.1-52.1c-20.5 0-38 11.9-46.5 29.1l-121.2-25.8c-3.4-.7-6.9-.1-9.8 1.8-2.9 1.9-4.9 4.8-5.6 8.2l-36.4 171.5c-.2 1 0 1.9 0 2.9-77.9 2-147.9 25.3-198.5 61.8-13.1-12.6-30.8-20.3-50.4-20.3-40.3 0-72.9 32.7-72.9 72.9 0 29.6 17.7 55.1 43.1 66.5-1.1 7.2-1.7 14.6-1.7 22.1 0 112.2 130.6 203.1 291.7 203.1s291.7-90.9 291.7-203.1c0-7.4-.6-14.7-1.7-21.9 25.3-11.4 43.2-36.9 43.2-66.7">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footp1">
+                    <p>™ & © 2021 Riot Games, Inc. League of Legends and all related logos, characters, names and<br>
+                        distinctive likenesses thereof are exclusive property of Riot Games, Inc. All Rights Reserved.
+                    </p>
+                </div>
+                <div class="footul2">
+                    <ul>
+                        <li>
+                            <a href="">Privacy Notice</a>
+                        </li>
+                        <li>
+                            <a href="">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="">Cookie Preferences</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="foot15">
+                    <img src="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt873108b7788eccd8/5e4ce144f2815f2507d7571b/na-esrb.png?&height=97&disable=upscale"
+                        alt="">
+                    <p>Blood<br>Fantasy Violence<br>Mild Suggestive Themes<br>Use of Alcohol and Tobacco<br>Online
+                        Interactions Not Rated by the ESRB</p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.r1').click(function () {
+            $('.v1').removeAttr('hidden');
+            $('.v3').attr('hidden', true);
+            $('.v2').attr('hidden', true);
+            $('#bg1').removeAttr('hidden');
+            $('#bg1').fadeIn(500);
+            $('#bg2').fadeOut(500);
+            $('#bg3').fadeOut(500);
+            $('#bg2').attr('hidden', true);
+            $('#bg3').attr('hidden', true);
+
+        });
+
+        $('.r2').click(function () {
+            $('.v2').removeAttr('hidden');
+            $('.v1').attr('hidden', true);
+            $('.v3').attr('hidden', true);
+            $('#bg2').removeAttr('hidden');
+            $('#bg2').fadeIn(500);
+            $('#bg1').fadeOut(500);
+            $('#bg3').fadeOut(500);
+            $('#bg3').attr('hidden', true);
+
+        });
+
+        $('.r3').click(function () {
+            $('.v3').removeAttr('hidden');
+            $('.v1').attr('hidden', true);
+            $('.v2').attr('hidden', true);
+            $('#bg3').removeAttr('hidden');
+            $('#bg3').fadeIn(500);
+            $('#bg1').fadeOut(500);
+            $('#bg2').fadeOut(500);
+            $('#bg1').attr('hidden', true);
+            $('#bg2').attr('hidden', true);
+
+        });
+
+
+        $('.sec4li1').click(function () {
+            $('.sec4rimg1').removeAttr('hidden');
+            $('.sec4rimg2').attr('hidden', true);
+            $('.sec4rimg3').attr('hidden', true);
+            $('.sec4rimg4').attr('hidden', true);
+            $('.sec4rimg5').attr('hidden', true);
+            $('.sec4rimg6').attr('hidden', true);
+            $(".sec4li1 svg path").css('fill', '#000');
+            $(".sec4li1 p").css('color', '#000');
+            $(".sec4li3 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li3 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li4 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li4 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li5 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li5 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li6 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li6 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li2 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li2 p").css('color', 'rgb(186, 194, 204)');
+        });
+
+        $('.sec4li2').click(function () {
+            $('.sec4rimg2').removeAttr('hidden');
+            $('.sec4rimg1').attr('hidden', true);
+            $('.sec4rimg3').attr('hidden', true);
+            $('.sec4rimg4').attr('hidden', true);
+            $('.sec4rimg5').attr('hidden', true);
+            $('.sec4rimg6').attr('hidden', true);
+            $(".sec4li2 svg path").css('fill', '#000');
+            $(".sec4li2 p").css('color', '#000');
+            $(".sec4li3 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li3 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li4 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li4 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li5 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li5 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li6 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li6 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li1 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li1 p").css('color', 'rgb(186, 194, 204)');
+        });
+
+        $('.sec4li3').click(function () {
+            $('.sec4rimg3').removeAttr('hidden');
+            $('.sec4rimg1').attr('hidden', true);
+            $('.sec4rimg2').attr('hidden', true);
+            $('.sec4rimg4').attr('hidden', true);
+            $('.sec4rimg5').attr('hidden', true);
+            $('.sec4rimg6').attr('hidden', true);
+            $(".sec4li3 svg path").css('fill', '#000');
+            $(".sec4li3 p").css('color', '#000');
+            $(".sec4li2 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li2 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li4 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li4 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li5 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li5 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li6 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li6 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li1 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li1 p").css('color', 'rgb(186, 194, 204)');
+        });
+
+        $('.sec4li4').click(function () {
+            $('.sec4rimg4').removeAttr('hidden');
+            $('.sec4rimg1').attr('hidden', true);
+            $('.sec4rimg2').attr('hidden', true);
+            $('.sec4rimg3').attr('hidden', true);
+            $('.sec4rimg5').attr('hidden', true);
+            $('.sec4rimg6').attr('hidden', true);
+            $(".sec4li4 svg path").css('fill', '#000');
+            $(".sec4li4 p").css('color', '#000');
+            $(".sec4li3 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li3 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li2 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li2 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li5 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li5 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li6 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li6 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li1 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li1 p").css('color', 'rgb(186, 194, 204)');
+        });
+
+        $('.sec4li5').click(function () {
+            $('.sec4rimg5').removeAttr('hidden');
+            $('.sec4rimg1').attr('hidden', true);
+            $('.sec4rimg2').attr('hidden', true);
+            $('.sec4rimg4').attr('hidden', true);
+            $('.sec4rimg3').attr('hidden', true);
+            $('.sec4rimg6').attr('hidden', true);
+            $(".sec4li5 svg path").css('fill', '#000');
+            $(".sec4li5 p").css('color', '#000');
+            $(".sec4li3 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li3 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li4 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li4 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li2 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li2 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li6 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li6 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li1 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li1 p").css('color', 'rgb(186, 194, 204)');
+        });
+
+        $('.sec4li6').click(function () {
+            $('.sec4rimg6').removeAttr('hidden');
+            $('.sec4rimg1').attr('hidden', true);
+            $('.sec4rimg2').attr('hidden', true);
+            $('.sec4rimg4').attr('hidden', true);
+            $('.sec4rimg5').attr('hidden', true);
+            $('.sec4rimg3').attr('hidden', true);
+            $(".sec4li6 svg path").css('fill', '#000');
+            $(".sec4li6 p").css('color', '#000');
+            $(".sec4li3 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li3 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li4 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li4 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li5 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li5 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li2 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li2 p").css('color', 'rgb(186, 194, 204)');
+            $(".sec4li1 svg path").css('fill', 'rgb(186, 194, 204)');
+            $(".sec4li1 p").css('color', 'rgb(186, 194, 204)');
+        });
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() >= $('#cards').offset().top) {
+                $('#cards').addClass('show');
+            }
+            else {
+                $('#cards').removeClass('show');
+            }
+        });
+
+        // $('.sec3-bg img').mouseenter(function () {
+        //     $(this).css({ transform: "scale3d(1.05, 1.05, 1)" });
+        // });
+
+        $('.sec3-bg img').mouseenter(function () {
+            $(this).addClass('s3d');
+        });
+
+        $('.sec3-bg img').mouseleave(function () {
+            $(this).removeClass('s3d');
+            $(this).addClass('s3dd');
+        });
+
+    </script>
+</body>
+
+</html>
